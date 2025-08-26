@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SokoGuru - Berita Terkini Indonesia</title>
+    <meta name="description" content="Portal berita terkini, infografis, dan informasi terpercaya dari Indonesia" />
+    <meta name="author" content="SokoGuru" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SokoGuru - Berita Terkini Indonesia" />
+    <meta property="og:description" content="Portal berita terkini, infografis, dan informasi terpercaya dari Indonesia" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/og-image.jpg" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header-main">
+      <div class="container">
+        <!-- Top Navigation -->
+        <div class="row align-items-center justify-content-between py-3">
+          <div class="col-md-3">
+            <!-- Logo -->
+            <div class="d-flex align-items-center">
+              <img src="/assets/images/logo.png" alt="Logo Sokoguru" />
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <!-- Search Bar -->
+            <div class="search-container">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Cari berita..." id="searchInput" />
+                <button class="btn btn-danger" type="button" id="searchBtn">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="col-md-3 d-none d-md-block">
+          </div> -->
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="navbar navbar-expand-lg navbar-light border-top">
+          <div class="container-fluid p-0">
+            <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active fw-medium" href="#" data-category="semua">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-medium" href="#" data-category="nasional"> Berita</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-medium" href="#" data-category="politik"> Bisnis</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-medium" href="#" data-category="internasional"> Inspirasi</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-medium" href="#" data-category="olahraga"> Kreatif</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-medium" href="#" data-category="teknologi"> Lokal</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-medium" href="#" data-category="pendidikan"> Tekno</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-medium" href="#" data-category="kesehatan"> Bola</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-medium" href="#" data-category="lifestyle">Video</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-medium" href="#" data-category="lifestyle">Infografis</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-medium" href="#" data-category="lifestyle">Koperasi Merah Putih</a>
+                </li>
+              </ul>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/images/top-agustusab-1754948580.webp" class="img-fluid" alt="" />
+          </div>
+          <div class="carousel-item active">
+            <img src="assets/images/top-agustusab-1754948580.webp" class="img-fluid" alt="" />
+          </div>
+          <div class="carousel-item active">
+            <img src="assets/images/top-agustusab-1754948580.webp" class="img-fluid" alt="" />
+          </div>
+        </div>
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <div class="container">
+        <!-- Advertisement Banner -->
+      
+        <!-- Headline Posts -->
+        <section class="headline-section my-5">
+          <div class="ad-banner mb-5">
+            <div class="ad-placeholder text-center py-5">
+              <h5 class="text-muted">Advertisement</h5>
+              <p class="text-muted mb-0">Pasang Iklan Anda Sekarang di sini<br />Jangkauan lebih luas dengan harga terjangkau</p>
+            </div>
+          </div> 
+          
+          <h2 class="section-title">HEADLINE POSTS</h2>
+
+          <div class="row" id="headlineNews">
+            <!-- Headlines will be loaded here by JavaScript -->
+          </div>
+        </section>
+
+        <!-- Infographics -->
+        <section class="infographics-section my-5 py-4 bg-light">
+          <div class="container">
+            <h2 class="section-title">INFOGRAFIS</h2>
+            <div id="infographicsCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 col-6 mb-3">
+                      <img src="assets/images/infografis/17-oktober-2024-semua-produk-kuliner-wajib-bersertifikasi-halal.webp" class="img-fluid rounded" alt="" />
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 mb-3">
+                      <img src="assets/images/infografis/bangga-ke-gerai-umkm-gara-gara-m-bloc-market.webp" class="img-fluid rounded" alt="" />
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 mb-3">
+                      <img src="assets/images/infografis/kelor-penangkal-penyakit-horor.webp" class="img-fluid rounded" alt="" />
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 mb-3">
+                      <img src="assets/images/infografis/mencicipi-sejarah-kolak.webp" class="img-fluid rounded" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="news-main-section my-5">
+          <h2 class="section-title">TRENDING POSTS</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="other-news-section">
+                <div class="">
+                  <div class="news-card fade-in" style="animation-delay: index * 0.1s">
+                      <div class="position-relative">
+                          <img src="https://img.sokoguru.id/backend/1080572539347616894/daftar-distributor-pupuk-bersubsidi-2025-dibuka-unit-usaha-koperasi-merah-putih-siap-join-pupuk-indonesia.webp" alt="featured" class="news-card-image">
+                          <span class="news-category">Berita</span>
+                      </div>
+                      <div class="card-body">
+                          <h5 class="fw-semibold">
+                              <a href="#" class="link-dark link-offset-2 link-underline link-underline-opacity-0">Daftar Distributor Pupuk Bersubsidi 2025 Dibuka, Unit Usaha Koperasi Merah Putih Siap Join Pupuk Indonesia</a>
+                          </h5>
+                          <div class="d-flex gap-3 mb-3">
+                            <div class="d-flex gap-1 align-items-center">
+                              <i class="bi bi-calendar3"></i>
+                              <p class="news-meta mb-0">20 Juni 2026</p>
+                            </div>
+                            <div class="d-flex gap-1 align-items-center">
+                              <i class="bi bi-person-circle"></i>
+                              <p class="news-meta mb-0">Yandy Laurens</p>
+                            </div>
+                          </div>
+                          <p class="news-excerpt">PT Pupuk Indonesia (Persero) kembali membuka kesempatan bagi calon mitra yang ingin menjadi distributor pupuk bersubsidi untuk tahun anggaran...</p>
+                          <button type="button" class="btn btn-danger">Baca Selengkapnya</button>
+                      </div>
+                  </div>
+              </div>
+              </div>
+            </div>
+             <div class="col-md-8">
+            <div class="trending-section mb-5">
+              <div id="trendingNews">
+                <!-- Trending news will be loaded here -->
+              </div>
+            </div>
+          </div>
+          </div>
+         
+        </section>
+         <!-- Advertisement Banner -->
+         <div class="ad-banner mb-5">
+          <div class="ad-placeholder text-center py-5">
+            <h5 class="text-muted">Advertisement</h5>
+            <p class="text-muted mb-0">Pasang Iklan Anda Sekarang di sini<br />Jangkauan lebih luas dengan harga terjangkau</p>
+          </div>
+        </div>
+        <!-- News Section with Sidebar -->
+        <section class="news-main-section my-5">
+          <div class="row">
+            <div class="col-lg-8">
+              <!-- Berita Lainnya -->
+              <div class="other-news-section">
+                <h2 class="section-title">BERITA LAINNYA</h2>
+                <div class="row" id="otherNews">
+                  <!-- Other news will be loaded here -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar - Berita Terbaru (Sticky) -->
+            <div class="col-lg-4">
+              <div class="sidebar-sticky">
+                <h2 class="section-title">BERITA TERBARU</h3>
+                <div class="berita-terbaru-section">
+                  <div id="beritaTerbaru">
+                    <!-- Latest news will be loaded here -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="">
+      <img src="assets/images/bottom-banner-1746602160.webp" class="img-fluid" alt="" />
+    </div> 
+    <!-- Footer -->
+    <footer class="footer-main bg-dark text-white pt-5">
+      <div class="container">
+        <div class="row d-flex justify-content-between">
+          <!-- Logo dan Contact Section -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="footer-logo mb-3">
+              <img src="/assets/images/logo-white.png" alt="Logo Sokoguru" class="mb-3" />
+            </div>
+            
+            <!-- Address -->
+            <div class="footer-contact mb-3">
+              <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-geo-alt me-2 mt-1"></i>
+                <div>
+                  <p class="mb-1 text-light">Prosperity Tower, 8th Floor Kawasan District 8,</p>
+                  <p class="mb-1 text-light">SCBD LOT 13, Jl. Jend. Sudirman Kav. 52-53,</p>
+                  <p class="mb-0 text-light">Kebayoran Baru, Jakarta Selatan</p>
+                </div>
+              </div>
+              
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-geo-alt me-2"></i>
+                <p class="mb-0 text-light">Jl. Sulaksana Makmur Tim. No.14 Bandung, Jawa Barat</p>
+              </div>
+              
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-envelope me-2"></i>
+                <p class="mb-0 text-light">admin@sokoguru.id</p>
+              </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="social-links d-flex gap-3">
+              <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-tiktok"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-twitter-x"></i></a>
+            </div>
+            
+            <div class="mt-5">
+              <p class="mb-0 text-light small">© 2025 Sokoguru.id Hak cipta dilindungi undang-undang</p>
+            </div>
+          </div>
+          
+          <!-- Sitemap Column 1 -->
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h6 class="fw-bold mb-3 text-white">Sitemap</h6>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#" class="text-light text-decoration-none">Soko Berita</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Soko Bisnis</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Soko Inspirasi</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Soko Kreatif</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Soko Lokal</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Soko Tekno</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Video</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Koperasi Merah Putih</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Soko Bola</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Infografis</a></li>
+            </ul>
+          </div>
+          
+          <!-- Right Column -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <ul class="list-unstyled footer-links">
+              <li><a href="#" class="text-light text-decoration-none">Tentang sokoguru.id</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Berikan</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Pedoman Media Siber</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Kebijakan Privasi</a></li>
+              <li><a href="#" class="text-light text-decoration-none">Hubungi Kami</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
