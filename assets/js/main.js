@@ -387,7 +387,7 @@ function loadOtherNews() {
   for (let i = 4; i < 7; i++) {
     if (news[i]) {
       newsHTML += `
-        <div class="col-md-4">
+        <div class="col-md-4 mb-4 mb-md-0">
           <div class="news-card fade-in" style="animation-delay: ${(i - 4) * 0.1}s">
             <div class="position-relative">
               <img src="${news[i].image}" alt="${news[i].title}" class="news-other-image w-100" style="height: 200px; object-fit: cover;">
