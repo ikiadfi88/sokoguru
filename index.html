@@ -177,47 +177,24 @@
             </div>
           </div>
         </section>
-        <section class="news-main-section my-5">
+        <section class="news-trending-section my-5">
           <h2 class="section-title">TRENDING POSTS</h2>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 ">
               <div class="other-news-section">
-                <div class="">
-                  <div class="news-card fade-in" style="animation-delay: index * 0.1s">
-                      <div class="position-relative">
-                          <img src="https://img.sokoguru.id/backend/1080572539347616894/daftar-distributor-pupuk-bersubsidi-2025-dibuka-unit-usaha-koperasi-merah-putih-siap-join-pupuk-indonesia.webp" alt="featured" class="news-card-image">
-                          <span class="news-category">Berita</span>
-                      </div>
-                      <div class="card-body">
-                          <h5 class="fw-semibold">
-                              <a href="#" class="link-dark link-offset-2 link-underline link-underline-opacity-0">Daftar Distributor Pupuk Bersubsidi 2025 Dibuka, Unit Usaha Koperasi Merah Putih Siap Join Pupuk Indonesia</a>
-                          </h5>
-                          <div class="d-flex gap-3 mb-3">
-                            <div class="d-flex gap-1 align-items-center">
-                              <i class="bi bi-calendar3"></i>
-                              <p class="news-meta mb-0">20 Juni 2026</p>
-                            </div>
-                            <div class="d-flex gap-1 align-items-center">
-                              <i class="bi bi-person-circle"></i>
-                              <p class="news-meta mb-0">Yandy Laurens</p>
-                            </div>
-                          </div>
-                          <p class="news-excerpt">PT Pupuk Indonesia (Persero) kembali membuka kesempatan bagi calon mitra yang ingin menjadi distributor pupuk bersubsidi untuk tahun anggaran...</p>
-                          <button type="button" class="btn btn-danger">Baca Selengkapnya</button>
-                      </div>
-                  </div>
-              </div>
+                <div id="featuredNews">
+                  <!-- Featured news card akan di-load di sini secara dinamis -->
+                </div>
               </div>
             </div>
-             <div class="col-md-8">
-            <div class="trending-section mb-5">
-              <div id="trendingNews">
-                <!-- Trending news will be loaded here -->
+            <div class="col-md-8">
+              <div class="trending-section mb-5">
+                <div id="trendingNews">
+                  <!-- Trending news cards akan di-load di sini secara dinamis -->
+                </div>
               </div>
             </div>
           </div>
-          </div>
-         
         </section>
          <!-- Advertisement Banner -->
          <div class="ad-banner mb-5">
@@ -226,26 +203,20 @@
             <p class="text-muted mb-0">Pasang Iklan Anda Sekarang di sini<br />Jangkauan lebih luas dengan harga terjangkau</p>
           </div>
         </div>
-        <!-- News Section with Sidebar -->
         <section class="news-main-section my-5">
           <div class="row">
             <div class="col-lg-8">
-              <!-- Berita Lainnya -->
               <div class="other-news-section">
                 <h2 class="section-title">BERITA LAINNYA</h2>
-                <div class="row" id="otherNews">
-                  <!-- Other news will be loaded here -->
-                </div>
+                <div class="" id="otherNews">
+               </div>
               </div>
             </div>
-
-            <!-- Sidebar - Berita Terbaru (Sticky) -->
             <div class="col-lg-4">
               <div class="sidebar-sticky">
                 <h2 class="section-title">BERITA TERBARU</h3>
                 <div class="berita-terbaru-section">
                   <div id="beritaTerbaru">
-                    <!-- Latest news will be loaded here -->
                   </div>
                 </div>
               </div>
@@ -272,7 +243,7 @@
             <!-- Address -->
             <div class="footer-contact mb-3">
               <div class="d-flex align-items-start mb-2">
-                <i class="bi bi-geo-alt me-2 mt-1"></i>
+                <!-- <i class="bi bi-geo-alt me-2 mt-1"></i> -->
                 <div>
                   <p class="mb-1 text-light">Prosperity Tower, 8th Floor Kawasan District 8,</p>
                   <p class="mb-1 text-light">SCBD LOT 13, Jl. Jend. Sudirman Kav. 52-53,</p>
@@ -280,13 +251,13 @@
                 </div>
               </div>
               
-              <div class="d-flex align-items-center mb-2">
-                <i class="bi bi-geo-alt me-2"></i>
+              <div class="d-flex align-items-start mb-2">
+                <!-- <i class="bi bi-geo-alt me-2"></i> -->
                 <p class="mb-0 text-light">Jl. Sulaksana Makmur Tim. No.14 Bandung, Jawa Barat</p>
               </div>
               
-              <div class="d-flex align-items-center mb-3">
-                <i class="bi bi-envelope me-2"></i>
+              <div class="d-flex align-items-start mb-3">
+                <!-- <i class="bi bi-envelope me-2"></i> -->
                 <p class="mb-0 text-light">admin@sokoguru.id</p>
               </div>
             </div>
@@ -301,9 +272,7 @@
               <a href="#" class="text-light"><i class="bi bi-twitter-x"></i></a>
             </div>
             
-            <div class="mt-5">
-              <p class="mb-0 text-light small">© 2025 Sokoguru.id Hak cipta dilindungi undang-undang</p>
-            </div>
+            
           </div>
           
           <!-- Sitemap Column 1 -->
@@ -333,7 +302,11 @@
               <li><a href="#" class="text-light text-decoration-none">Hubungi Kami</a></li>
             </ul>
           </div>
+          <div class="mb-5">
+            <p class="mb-0 text-light small">© 2025 Sokoguru.id Hak cipta dilindungi undang-undang</p>
+          </div>
         </div>
+        
       </div>
     </footer>
     <!-- Bootstrap 5 JS -->

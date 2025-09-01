@@ -13,30 +13,50 @@ const newsData = {
       isLarge: true,
     },
   ],
+  featured: [
+    {
+      id: 1,
+      title: "Daftar Distributor Pupuk Bersubsidi 2025 Dibuka, Unit Usaha Koperasi Merah Putih Siap Join Pupuk Indonesia",
+      image: "https://img.sokoguru.id/backend/1080572539347616894/daftar-distributor-pupuk-bersubsidi-2025-dibuka-unit-usaha-koperasi-merah-putih-siap-join-pupuk-indonesia.webp",
+      category: "Berita",
+      date: "20 Juni 2026",
+      author: "Yandy Laurens",
+      excerpt: "PT Pupuk Indonesia (Persero) kembali membuka kesempatan bagi calon mitra yang ingin menjadi distributor pupuk bersubsidi untuk tahun anggaran...",
+      slug: "daftar-distributor-pupuk-bersubsidi-2025-dibuka-unit-usaha-koperasi-merah-putih-siap-join-pupuk-indonesia",
+    },
+  ],
   trending: [
     {
       id: 4,
       title: "Kemendag Umumkan Harga Referensi CPO Minggu Ini: Naik Rp500 Menjadi Rp14.500 pada Periode Agustus 2024",
       date: "1 jam yang lalu",
+      author: "Admin Redaksi",
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
+      slug: "kemendag-umumkan-harga-referensi-cpo-minggu-ini-naik-rp500-menjadi-rp14500-pada-periode-agustus-2024",
     },
     {
       id: 5,
       title: "Mahasiswa Indonesia Raih Juara 1 Kompetisi Robotika Internasional di Jepang dengan Inovasi Ramah Lingkungan",
       date: "3 jam yang lalu",
+      author: "Redaksi Teknologi",
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
+      slug: "mahasiswa-indonesia-raih-juara-1-kompetisi-robotika-internasional-di-jepang-dengan-inovasi-ramah-lingkungan",
     },
     {
       id: 6,
       title: "Pemerintah Luncurkan Program Beasiswa Digital untuk 10.000 Mahasiswa Berprestasi se-Indonesia",
       date: "5 jam yang lalu",
+      author: "Tim Pendidikan",
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
+      slug: "pemerintah-luncurkan-program-beasiswa-digital-untuk-10000-mahasiswa-berprestasi-se-indonesia",
     },
     {
       id: 7,
       title: "Festival Kuliner Nusantara 2024 Hadirkan 500 Stand UMKM dari Seluruh Indonesia di Jakarta",
       date: "7 jam yang lalu",
+      author: "Redaksi Kuliner",
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
+      slug: "festival-kuliner-nusantara-2024-hadirkan-500-stand-umkm-dari-seluruh-indonesia-di-jakarta",
     },
   ],
   other: [
@@ -129,12 +149,6 @@ const newsData = {
       time: "1 jam yang lalu",
       category: "Soko Kreatif",
     },
-    {
-      id: 19,
-      title: "Pendidikan: 500 Sekolah di Indonesia Terima Dana Hibah untuk Program Digitalisasi Pembelajaran",
-      time: "1.5 jam yang lalu",
-      category: "Koperasi Merah Putih",
-    },
   ],
 };
 
@@ -143,6 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize components
   initializeSearch();
   loadHeadlineNews();
+  loadFeaturedNews();
   loadTrendingNews();
   loadOtherNews();
   loadLatestNews();
@@ -181,13 +196,15 @@ function loadHeadlineNews() {
 
     const newsHTML = `
       <div class="mb-4">
-        <div class="news-card ${cardClass} fade-in" style="animation-delay: ${index * 0.1}s">
+        <div class="news-card ${cardClass} fade-in clickable-card" 
+             style="animation-delay: ${index * 0.1}s; cursor: pointer;" 
+             data-news-id="${news.id}">
           <div class="news-headline">
             <img src="${news.image}" alt="${news.title}">
             <div class="news-overlay">
               <p class="badge text-bg-danger fw-semibold fs-5">${news.category}</p>
               <h1 class="fw-semibold">
-                <a href="#" class="link-light link-offset-2 link-underline link-underline-opacity-0" onclick="readNews(${news.id})">${news.title}</a>
+                ${news.title}
               </h1>
               <div class="d-flex gap-3 align-items-center">
                 <div class="d-flex gap-1 align-items-center">
@@ -209,115 +226,193 @@ function loadHeadlineNews() {
   });
 }
 
-// Load trending news
-function loadTrendingNews() {
-  const container = document.getElementById("trendingNews");
+// Load featured news (card utama dengan button)
+function loadFeaturedNews() {
+  const container = document.getElementById("featuredNews");
+  container.innerHTML = ""; // Clear existing conten
 
-  newsData.trending.forEach((news, index) => {
-    const trendingHTML = `
-            <div class="row g-0 mb-4 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
-            <div class="col-auto d-none d-lg-block">              
-              <img src="${news.image}" alt="${news.title} width="200" height="131" class="bd-placeholder-img">
-            </div>
-            <div class="col p-3 d-flex flex-column position-static">
+  newsData.featured.forEach((news, index) => {
+    const featuredHTML = `
+    <div class="">
+      <div class="news-card fade-in" style="animation-delay: 0.1s">
+          <div class="position-relative">
+              <img src="${news.image}" alt="${news.title}" class="news-card-image">
+              <span class="news-category">${news.category}</span>
+          </div>
+          <div class="card-body">
               <h5 class="fw-semibold">
-                <a href="#" class="link-dark link-offset-2 link-underline link-underline-opacity-0" onclick="readNews(${news.id})">${news.title}</a>
+                  <a href="/berita/${news.slug}" class="link-dark link-offset-2 link-underline link-underline-opacity-0">${news.title}</a>
               </h5>
-              <div class="d-flex gap-3">
-                <div class="d-flex gap-1 ">
+              <div class="d-flex gap-3 mb-3">
+                <div class="d-flex gap-1 align-items-center">
                   <i class="bi bi-calendar3"></i>
                   <p class="news-meta mb-0">${news.date}</p>
                 </div>
-                <div class="d-flex gap-1">
+                <div class="d-flex gap-1 align-items-center">
                   <i class="bi bi-person-circle"></i>
                   <p class="news-meta mb-0">${news.author}</p>
                 </div>
               </div>
-            </div>
-            
-            </div>
+              <p class="news-excerpt">${news.excerpt}</p>
+              <button type="button" class="btn btn-danger" onclick="navigateToNews('${news.slug}')">
+                Baca Selengkapnya
+              </button>
           </div>
-        `;
+      </div>
+    </div>
+  `;
 
-    container.innerHTML += trendingHTML;
+    container.innerHTML = featuredHTML;
   });
 }
 
-// Load other news
+function loadTrendingNews() {
+  const container = document.getElementById("trendingNews");
+  container.innerHTML = ""; // Clear existing content
+
+  newsData.trending.forEach((news, index) => {
+    const trendingHTML = `
+      <div class="row g-0 mb-4 border rounded-4 overflow-hidden flex-md-row shadow-sm h-md-250 position-relative clickable-trending-card" 
+           style="cursor: pointer; transition: all 0.3s ease;" 
+           data-news-slug="${news.slug}">
+        <div class="col-auto d-none d-lg-block">              
+          <img src="${news.image}" alt="${news.title}" width="200" height="131" class="bd-placeholder-img">
+        </div>
+        <div class="col p-3 d-flex flex-column position-static">
+          <h5 class="fw-semibold">
+            ${news.title}
+          </h5>
+          <div class="d-flex gap-3">
+            <div class="d-flex gap-1 align-items-center">
+              <i class="bi bi-calendar3"></i>
+              <p class="news-meta mb-0">${news.date}</p>
+            </div>
+            <div class="d-flex gap-1 align-items-center">
+              <i class="bi bi-person-circle"></i>
+              <p class="news-meta mb-0">${news.author}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    container.innerHTML += trendingHTML;
+  });
+
+  // Add click listeners untuk trending cards
+  addTrendingCardListeners();
+}
+
+// Event listeners untuk trending cards
+function addTrendingCardListeners() {
+  const trendingCards = document.querySelectorAll(".clickable-trending-card");
+
+  trendingCards.forEach((card) => {
+    card.addEventListener("click", function () {
+      const newsSlug = this.getAttribute("data-news-slug");
+      navigateToNews(newsSlug);
+    });
+  });
+}
+
+// Load other news with static 3-row layout
 function loadOtherNews() {
   const container = document.getElementById("otherNews");
+  const news = newsData.other;
 
-  newsData.other.forEach((news, index) => {
-    // Tentukan apakah ini baris ganjil (3 kartu) atau baris genap (1 kartu memanjang)
-    const rowPosition = Math.floor(index / 4) * 2; // Setiap 4 item membuat 2 baris
-    const positionInCycle = index % 4;
+  let newsHTML = "";
 
-    if (positionInCycle === 0) {
-      // Mulai baris baru untuk 3 kartu
-      container.innerHTML += `<div class="row" id="row-${rowPosition}">`;
-    }
-
-    if (positionInCycle < 3) {
-      // Baris dengan 3 kartu (baris ganjil)
-      const newsHTML = `
-        <div class="col-md-4">
-          <div class="news-card fade-in" style="animation-delay: ${index * 0.1}s">
+  // BARIS PERTAMA - 3 Cards
+  newsHTML += `<div class="row">`;
+  for (let i = 0; i < 3; i++) {
+    if (news[i]) {
+      newsHTML += `
+        <div class="col-md-4 mb-4">
+          <div class="news-card fade-in" style="animation-delay: ${i * 0.1}s">
             <div class="position-relative">
-              <img src="${news.image}" alt="${news.title}" class="news-other-image w-100" style="height: 200px; object-fit: cover;">
-              <span class="news-category">${news.category}</span>
+              <img src="${news[i].image}" alt="${news[i].title}" class="news-other-image w-100" style="height: 200px; object-fit: cover;">
+              <span class="news-category">${news[i].category}</span>
             </div>
             <div class="card-body p-3">
               <h6 class="fw-semibold mb-2">
-                <a href="#" class="link-dark link-offset-2 link-underline link-underline-opacity-0" onclick="readNews(${news.id})">${news.title}</a>
+                <a href="#" class="link-dark link-offset-2 link-underline link-underline-opacity-0" onclick="readNews(${news[i].id})">${news[i].title}</a>
               </h6>
-              <p class="text-muted small mb-2">${news.excerpt}</p>
+              <p class="text-muted small mb-2">${news[i].excerpt}</p>
               <div class="d-flex gap-3 small text-muted">
                 <div class="d-flex align-items-center gap-1">
                   <i class="bi bi-calendar3"></i>
-                  <span>${news.date}</span>
+                  <span>${news[i].date}</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       `;
+    }
+  }
+  newsHTML += `</div>`;
 
-      container.innerHTML += newsHTML;
-
-      // Tutup baris setelah 3 kartu atau jika ini item terakhir
-      if (positionInCycle === 2 || index === newsData.other.length - 1) {
-        container.innerHTML += `</div>`;
-      }
-    } else if (positionInCycle === 3) {
-      // Baris dengan 1 kartu memanjang (baris genap)
-      const wideNewsHTML = `
-          <div class="col-12 my-4">
-            <div class="row g-0 rounded-4 overflow-hidden shadow h-md-250 position-relative fade-in" style="animation-delay: ${index * 0.1}s">
-              <div class="col-md-8 p-4 d-flex flex-column position-static">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <span class="badge text-bg-danger fw-semibold" style="border-radius: 4px; padding: 8px">${news.category}</span>
-                </div>
-                <h4 class="fw-semibold mb-3">
-                  <a href="#" class="link-dark link-offset-2 link-underline link-underline-opacity-0" onclick="readNews(${news.id})">${news.title}</a>
-                </h4>
-                <p class="text-muted mb-3">${news.excerpt}</p>
-                <div class="d-flex gap-4 small text-muted mt-auto">
-                  <div class="d-flex gap-1 ">
+  // BARIS KEDUA - 1 Wide Card
+  if (news[3]) {
+    newsHTML += `
+      <div class="row">
+        <div class="col-12 mb-4">
+          <div class="row g-0 rounded-4 overflow-hidden shadow h-md-250 position-relative fade-in" style="animation-delay: 0.3s">
+            <div class="col-md-8 p-4 d-flex flex-column position-static">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge text-bg-danger fw-semibold" style="border-radius: 4px; padding: 8px">${news[3].category}</span>
+              </div>
+              <h4 class="fw-semibold mb-3">
+                <a href="#" class="link-dark link-offset-2 link-underline link-underline-opacity-0" onclick="readNews(${news[3].id})">${news[3].title}</a>
+              </h4>
+              <p class="text-muted mb-3">${news[3].excerpt}</p>
+              <div class="d-flex gap-4 small text-muted mt-auto">
+                <div class="d-flex gap-1">
                   <i class="bi bi-calendar3"></i>
-                  <p class="news-meta mb-0">${news.date}</p>
-                </div>
+                  <p class="news-meta mb-0">${news[3].date}</p>
                 </div>
               </div>
-              <div class="col-md-4 d-none d-md-block">
-                <img src="${news.image}" alt="${news.title}" class="w-100 h-100" style="object-fit: cover;">
+            </div>
+            <div class="col-md-4 d-none d-md-block">
+              <img src="${news[3].image}" alt="${news[3].title}" class="w-100 h-100" style="object-fit: cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // BARIS KETIGA - 3 Cards
+  newsHTML += `<div class="row">`;
+  for (let i = 4; i < 7; i++) {
+    if (news[i]) {
+      newsHTML += `
+        <div class="col-md-4">
+          <div class="news-card fade-in" style="animation-delay: ${(i - 4) * 0.1}s">
+            <div class="position-relative">
+              <img src="${news[i].image}" alt="${news[i].title}" class="news-other-image w-100" style="height: 200px; object-fit: cover;">
+              <span class="news-category">${news[i].category}</span>
+            </div>
+            <div class="card-body p-3">
+              <h6 class="fw-semibold mb-2">
+                <a href="#" class="link-dark link-offset-2 link-underline link-underline-opacity-0" onclick="readNews(${news[i].id})">${news[i].title}</a>
+              </h6>
+              <p class="text-muted small mb-2">${news[i].excerpt}</p>
+              <div class="d-flex gap-3 small text-muted">
+                <div class="d-flex align-items-center gap-1">
+                  <i class="bi bi-calendar3"></i>
+                  <span>${news[i].date}</span>
+                </div>
               </div>
             </div>
           </div>
+        </div>
       `;
-
-      container.innerHTML += wideNewsHTML;
     }
-  });
+  }
+  newsHTML += `</div>`;
+
+  container.innerHTML = newsHTML;
 }
 
 // Load latest news for sidebar

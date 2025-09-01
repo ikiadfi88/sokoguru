@@ -145,6 +145,93 @@ p {
   color: var(--gray-light);
 }
 
+.headline-category {
+  background: var(--sokoguru-red);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* News Headline H1 Responsive */
+.news-overlay h1 {
+  font-size: 2.5rem; /* Default desktop size */
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+/* Tablet breakpoint */
+@media (max-width: 992px) {
+  .news-overlay h1 {
+    font-size: 2rem; /* Tablet size */
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  .news-overlay h1 {
+    font-size: 1.75rem; /* Mobile size */
+  }
+
+  /* Juga sesuaikan padding overlay untuk mobile */
+  .news-overlay {
+    padding: 30px 20px 20px;
+  }
+}
+
+/* Small mobile breakpoint */
+@media (max-width: 576px) {
+  .news-overlay h1 {
+    font-size: 1.5rem; /* Small mobile size */
+  }
+
+  .news-overlay {
+    padding: 25px 15px 15px;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 400px) {
+  .news-overlay h1 {
+    font-size: 1.3rem; /* Extra small mobile */
+  }
+}
+
+/* Alternative: Jika ingin menggunakan class khusus */
+.other-news-section {
+  margin-bottom: 0; /* Reset margin default */
+}
+
+/* Responsive margin untuk other-news-section */
+@media (max-width: 991.98px) {
+  .other-news-section {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .other-news-section {
+    margin-bottom: 24px;
+  }
+}
+
+/* Adjust trending section spacing */
+.trending-section {
+  margin-bottom: 0 !important; /* Remove default margin */
+}
+
+/* Ensure no extra spacing on desktop */
+@media (min-width: 992px) {
+  .news-main-section .col-md-4 {
+    margin-bottom: 0; /* No margin on desktop when side by side */
+  }
+
+  .other-news-section {
+    margin-bottom: 0;
+  }
+}
+
 /* News Cards */
 .news-card {
   background: white;
@@ -315,7 +402,6 @@ p {
 /* Sidebar Sticky */
 .sidebar-sticky {
   position: sticky;
-  top: 120px;
   height: fit-content;
 }
 
@@ -324,6 +410,8 @@ p {
   border-radius: 15px;
   padding: 25px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 /* Latest News Styles */
@@ -478,22 +566,12 @@ p {
 }
 
 /* Responsive adjustments */
+
 @media (max-width: 768px) {
-  .footer-main {
-    text-align: center;
-  }
-
-  .footer-contact {
-    text-align: left;
-  }
-
-  .social-links {
-    justify-content: center;
-    margin-top: 20px;
-  }
-
-  .footer-links {
-    text-align: left;
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    margin-top: 0;
   }
 }
 
@@ -505,7 +583,6 @@ p {
 
   .footer-contact .d-flex {
     flex-direction: column;
-    text-align: left;
   }
 
   .footer-contact i {
@@ -533,12 +610,6 @@ p {
 
   .news-card-image {
     height: 180px;
-  }
-
-  .sidebar-sticky {
-    position: relative;
-    top: 0;
-    margin-top: 40px;
   }
 }
 
